@@ -954,129 +954,129 @@ void streetLight()
     getColor("bridge");
     glBegin(GL_QUADS);
         glVertex2f(335,125);
-        glVertex2f(335,207);
-        glVertex2f(343,207);
+        glVertex2f(335,240);
+        glVertex2f(343,240);
         glVertex2f(343,125);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(343,199);
-        glVertex2f(343,207);
-        glVertex2f(366,207);
-        glVertex2f(366,199);
+        glVertex2f(343,232);
+        glVertex2f(343,240);
+        glVertex2f(366,240);
+        glVertex2f(366,232);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(366,192);
-        glVertex2f(366,199);
-        glVertex2f(374,199);
-        glVertex2f(374,192);
+        glVertex2f(366,225);
+        glVertex2f(366,232);
+        glVertex2f(374,232);
+        glVertex2f(374,225);
     glEnd();
 
     getColor("whiteLight");
     glBegin(GL_QUADS);
-        glVertex2f(366,185);
-        glVertex2f(366,192);
-        glVertex2f(374,192);
-        glVertex2f(374,185);
+        glVertex2f(366,218);
+        glVertex2f(366,225);
+        glVertex2f(374,225);
+        glVertex2f(374,218);
     glEnd();
 //2nd
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(726,125);
-        glVertex2f(726,207);
-        glVertex2f(734,207);
-        glVertex2f(734,125);
+        glVertex2f(646,125);
+        glVertex2f(646,240);
+        glVertex2f(654,240);
+        glVertex2f(654,125);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(734,199);
-        glVertex2f(734,207);
-        glVertex2f(757,207);
-        glVertex2f(757,199);
+        glVertex2f(654,232);
+        glVertex2f(654,240);
+        glVertex2f(677,240);
+        glVertex2f(677,232);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(757,192);
-        glVertex2f(757,199);
-        glVertex2f(765,199);
-        glVertex2f(765,192);
+        glVertex2f(677,225);
+        glVertex2f(677,232);
+        glVertex2f(685,232);
+        glVertex2f(685,225);
     glEnd();
 
     getColor("whiteLight");
     glBegin(GL_QUADS);
-        glVertex2f(757,185);
-        glVertex2f(757,192);
-        glVertex2f(765,192);
-        glVertex2f(765,185);
+        glVertex2f(677,218);
+        glVertex2f(677,225);
+        glVertex2f(685,225);
+        glVertex2f(685,218);
     glEnd();
 //3rd
     getColor("bridge");
     glBegin(GL_QUADS);
         glVertex2f(1120,125);
-        glVertex2f(1120,207);
-        glVertex2f(1128,207);
+        glVertex2f(1120,240);
+        glVertex2f(1128,240);
         glVertex2f(1128,125);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(1128,199);
-        glVertex2f(1128,207);
-        glVertex2f(1151,207);
-        glVertex2f(1151,199);
+        glVertex2f(1128,232);
+        glVertex2f(1128,240);
+        glVertex2f(1151,240);
+        glVertex2f(1151,232);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(1151,192);
-        glVertex2f(1151,199);
-        glVertex2f(1159,199);
-        glVertex2f(1159,192);
+        glVertex2f(1151,225);
+        glVertex2f(1151,232);
+        glVertex2f(1159,232);
+        glVertex2f(1159,225);
     glEnd();
 
     getColor("whiteLight");
     glBegin(GL_QUADS);
-        glVertex2f(1151,185);
-        glVertex2f(1151,192);
-        glVertex2f(1159,192);
-        glVertex2f(1159,185);
+        glVertex2f(1151,218);
+        glVertex2f(1151,225);
+        glVertex2f(1159,225);
+        glVertex2f(1159,218);
     glEnd();
 //4th
     getColor("bridge");
     glBegin(GL_QUADS);
         glVertex2f(1514,125);
-        glVertex2f(1514,207);
-        glVertex2f(1522,207);
+        glVertex2f(1514,240);
+        glVertex2f(1522,240);
         glVertex2f(1522,125);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(1522,199);
-        glVertex2f(1522,207);
-        glVertex2f(1545,207);
-        glVertex2f(1545,199);
+        glVertex2f(1522,232);
+        glVertex2f(1522,240);
+        glVertex2f(1545,240);
+        glVertex2f(1545,232);
     glEnd();
 
     getColor("bridge");
     glBegin(GL_QUADS);
-        glVertex2f(1545,192);
-        glVertex2f(1545,199);
-        glVertex2f(1553,199);
-        glVertex2f(1553,192);
+        glVertex2f(1545,225);
+        glVertex2f(1545,232);
+        glVertex2f(1553,232);
+        glVertex2f(1553,225);
     glEnd();
 
     getColor("whiteLight");
     glBegin(GL_QUADS);
-        glVertex2f(1545,185);
-        glVertex2f(1545,192);
-        glVertex2f(1553,192);
-        glVertex2f(1553,185);
+        glVertex2f(1545,218);
+        glVertex2f(1545,225);
+        glVertex2f(1553,225);
+        glVertex2f(1553,218);
     glEnd();
 }
 
@@ -1084,7 +1084,7 @@ void streetLight()
 void car_1()
 {
     glPushMatrix();
-    glTranslatef(carPosition_1,0, 0);
+    glTranslatef(carPosition_1, 25, 0);
     //body
     getColor("carBody_1");
     glBegin(GL_QUADS);
@@ -1219,7 +1219,7 @@ void car_1()
 void car_2()
 {
     glPushMatrix();
-    glTranslatef(carPosition_2,0, 0);
+    glTranslatef(carPosition_2, 25, 0);
     //body
     getColor("carBody_2");
     glBegin(GL_QUADS);
@@ -1330,7 +1330,7 @@ void car_2()
 void car_3()
 {
     glPushMatrix();
-    glTranslatef(carPosition_3, 0, 0);
+    glTranslatef(carPosition_3, 25, 0);
     // body (reuse carBody_1)
     getColor("carBody_1");
     glBegin(GL_QUADS);
@@ -1431,7 +1431,7 @@ void car_3()
 void car_4()
 {
     glPushMatrix();
-    glTranslatef(carPosition_4, 0, 0);
+    glTranslatef(carPosition_4, 25, 0);
     // body (reuse carBody_2)
     getColor("carBody_2");
     glBegin(GL_QUADS);
