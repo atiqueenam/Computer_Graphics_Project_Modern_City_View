@@ -4829,44 +4829,73 @@ void reflection()
 
 
 //sun
+// Midpoint Circle Algorithm - draws circle using 8-way symmetry
+void drawMidpointCircle(int cX, int cY, int radius, const string& colorName)
+{
+    int X = 0, Y = radius;
+    int p = 1 - radius;
+    
+    getColor(colorName);
+    glBegin(GL_POINTS);
+    
+    while(X <= Y){
+        // Plot all 8 octants
+        // Octant 1 (X, Y)
+        glVertex2i(X + cX, Y + cY);
+        glVertex2i(Y + cX, X + cY);
+        
+        // Octant 2 (-X, Y)
+        glVertex2i(-X + cX, Y + cY);
+        glVertex2i(-Y + cX, X + cY);
+        
+        // Octant 3 (-X, -Y)
+        glVertex2i(-X + cX, -Y + cY);
+        glVertex2i(-Y + cX, -X + cY);
+        
+        // Octant 4 (X, -Y)
+        glVertex2i(X + cX, -Y + cY);
+        glVertex2i(Y + cX, -X + cY);
+        
+        // Update decision parameter and coordinates
+        if(p < 0){
+            X++;
+            p = p + 2*X + 1;
+        }
+        else{
+            X++;
+            Y--;
+            p = p + 2*X - 2*Y + 1;
+        }
+    }
+    
+    glEnd();
+}
+
+// Fill circle by drawing concentric circles using midpoint algorithm
+void fillMidpointCircle(int cX, int cY, int radius, const string& colorName)
+{
+    // Draw filled circle by drawing all circles from radius down to 0
+    for(int r = radius; r >= 0; r--){
+        drawMidpointCircle(cX, cY, r, colorName);
+    }
+}
+
 void sun()
 {
-    const float cx = 965.0f;
-    const float cy = 990.0f;
-    const float rSun = 45.0f;
-    const float rMoon = 35.0f;
-    const int segments = 48;
+    const int cx = 965;
+    const int cy = 990;
+    const int rSun = 45;
+    const int rMoon = 35;
 
     if (isDay) {
-        // Warm sun disk
-        getColor("sunDay");
-        glBegin(GL_TRIANGLE_FAN);
-            glVertex2f(cx, cy);
-            for (int i = 0; i <= segments; ++i) {
-                float ang = (2.0f * M_PI * i) / segments;
-                glVertex2f(cx + cosf(ang) * rSun, cy + sinf(ang) * rSun);
-            }
-        glEnd();
+        // Draw sun using midpoint circle algorithm
+        fillMidpointCircle(cx, cy, rSun, "sunDay");
     } else {
-        // Moon: bright disk minus a cutout for crescent
-        getColor("moon");
-        glBegin(GL_TRIANGLE_FAN);
-            glVertex2f(cx, cy);
-            for (int i = 0; i <= segments; ++i) {
-                float ang = (2.0f * M_PI * i) / segments;
-                glVertex2f(cx + cosf(ang) * rMoon, cy + sinf(ang) * rMoon);
-            }
-        glEnd();
-
+        // Draw moon using midpoint circle algorithm
+        fillMidpointCircle(cx, cy, rMoon, "moon");
+        
         // Cutout to form crescent using night sky color
-        getColor("skyNight");
-        glBegin(GL_TRIANGLE_FAN);
-            glVertex2f(cx + 12.0f, cy);
-            for (int i = 0; i <= segments; ++i) {
-                float ang = (2.0f * M_PI * i) / segments;
-                glVertex2f(cx + 12.0f + cosf(ang) * (rMoon - 6.0f), cy + sinf(ang) * (rMoon - 6.0f));
-            }
-        glEnd();
+        fillMidpointCircle(cx + 12, cy, rMoon - 6, "skyNight");
     }
 }
 
@@ -5195,6 +5224,51 @@ void cloudMove()
 }
 
 //Background
+// Stars in night sky
+void stars()
+{
+    if (!isDay) {
+        glColor3ub(255, 255, 255);
+        glPointSize(2.0);
+        glBegin(GL_POINTS);
+        // Draw scattered stars across the sky
+        glVertex2f(150, 950);
+        glVertex2f(280, 1020);
+        glVertex2f(420, 980);
+        glVertex2f(580, 1050);
+        glVertex2f(650, 920);
+        glVertex2f(780, 1000);
+        glVertex2f(850, 940);
+        glVertex2f(1050, 1030);
+        glVertex2f(1150, 970);
+        glVertex2f(1280, 1010);
+        glVertex2f(1420, 950);
+        glVertex2f(1520, 1040);
+        glVertex2f(1650, 990);
+        glVertex2f(1780, 1020);
+        glVertex2f(1850, 960);
+        glVertex2f(320, 880);
+        glVertex2f(500, 920);
+        glVertex2f(720, 860);
+        glVertex2f(940, 900);
+        glVertex2f(1100, 870);
+        glVertex2f(1340, 890);
+        glVertex2f(1560, 850);
+        glVertex2f(1720, 880);
+        glVertex2f(200, 780);
+        glVertex2f(450, 820);
+        glVertex2f(680, 760);
+        glVertex2f(890, 800);
+        glVertex2f(1020, 740);
+        glVertex2f(1220, 790);
+        glVertex2f(1480, 770);
+        glVertex2f(1670, 810);
+        glVertex2f(1820, 750);
+        glEnd();
+        glPointSize(1.0);
+    }
+}
+
 void backGround()
 {
     // Day/night sky and water
@@ -5270,6 +5344,8 @@ void myDisplay(void)
 
     //Background
     backGround();
+    //Stars (night only)
+    stars();
     //Cloud Move
     cloudMove();
     //Back Back Building
@@ -5293,13 +5369,14 @@ void myDisplay(void)
     roadSurface();
     //Street Light
     streetLight();
-    //Car
-    car_1();
+    //Cars moving right (behind pillars)
     car_2();
-    car_3();
     car_4();
     //Train Bridge
     trainBridge();
+    //Cars moving left (in front of pillars)
+    car_1();
+    car_3();
     //Water
     water();
     //Reflection
