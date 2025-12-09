@@ -112,6 +112,39 @@ void backBackBuilding_1()
         glVertex2f(220,1040);
         glVertex2f(310,1000);
     glEnd();
+
+    // Bigger windows
+    getColor("carWindow");
+    glBegin(GL_QUADS);
+        glVertex2f(160,880);
+        glVertex2f(160,920);
+        glVertex2f(200,920);
+        glVertex2f(200,880);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(240,880);
+        glVertex2f(240,920);
+        glVertex2f(280,920);
+        glVertex2f(280,880);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(160,740);
+        glVertex2f(160,780);
+        glVertex2f(200,780);
+        glVertex2f(200,740);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(240,740);
+        glVertex2f(240,780);
+        glVertex2f(280,780);
+        glVertex2f(280,740);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(200,600);
+        glVertex2f(200,640);
+        glVertex2f(240,640);
+        glVertex2f(240,600);
+    glEnd();
 }
 
 //Back Back Building 2
@@ -135,6 +168,33 @@ void backBackBuilding_2()
         glVertex2f(520,1040);
         glVertex2f(520,990);
     glEnd();
+
+    // Bigger windows
+    getColor("carWindow");
+    glBegin(GL_QUADS);
+        glVertex2f(445,890);
+        glVertex2f(445,930);
+        glVertex2f(485,930);
+        glVertex2f(485,890);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(495,890);
+        glVertex2f(495,930);
+        glVertex2f(535,930);
+        glVertex2f(535,890);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(445,800);
+        glVertex2f(445,840);
+        glVertex2f(485,840);
+        glVertex2f(485,800);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(495,800);
+        glVertex2f(495,840);
+        glVertex2f(535,840);
+        glVertex2f(535,800);
+    glEnd();
     glPopMatrix();
 }
 
@@ -157,6 +217,39 @@ void backBackBuilding_3()
         glVertex2f(1180,1080);
         glVertex2f(1350,1115);
         glVertex2f(1520,1080);
+    glEnd();
+
+    // Bigger windows
+    getColor("carWindow");
+    glBegin(GL_QUADS);
+        glVertex2f(1210,1000);
+        glVertex2f(1210,1040);
+        glVertex2f(1270,1040);
+        glVertex2f(1270,1000);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1340,1000);
+        glVertex2f(1340,1040);
+        glVertex2f(1400,1040);
+        glVertex2f(1400,1000);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1430,1000);
+        glVertex2f(1430,1040);
+        glVertex2f(1490,1040);
+        glVertex2f(1490,1000);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1260,940);
+        glVertex2f(1260,980);
+        glVertex2f(1320,980);
+        glVertex2f(1320,940);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1380,940);
+        glVertex2f(1380,980);
+        glVertex2f(1440,980);
+        glVertex2f(1440,940);
     glEnd();
     glPopMatrix();
 }
@@ -446,6 +539,39 @@ void frontBuilding_1()
         glVertex2f(180,290);
         glVertex2f(0,290);
     glEnd();
+
+    // Bigger windows
+    getColor("carWindow");
+    glBegin(GL_QUADS);
+        glVertex2f(30,820);
+        glVertex2f(30,870);
+        glVertex2f(80,870);
+        glVertex2f(80,820);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(100,820);
+        glVertex2f(100,870);
+        glVertex2f(150,870);
+        glVertex2f(150,820);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(30,670);
+        glVertex2f(30,720);
+        glVertex2f(80,720);
+        glVertex2f(80,670);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(100,670);
+        glVertex2f(100,720);
+        glVertex2f(150,720);
+        glVertex2f(150,670);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(65,520);
+        glVertex2f(65,570);
+        glVertex2f(115,570);
+        glVertex2f(115,520);
+    glEnd();
 }
 
 //Front Building 2
@@ -508,6 +634,33 @@ void frontBuilding_2()
         glVertex2f(760,540);
         glVertex2f(520,540);
     glEnd();
+
+    // Bigger windows
+    getColor("carWindow");
+    glBegin(GL_QUADS);
+        glVertex2f(300,680);
+        glVertex2f(300,730);
+        glVertex2f(360,730);
+        glVertex2f(360,680);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(380,680);
+        glVertex2f(380,730);
+        glVertex2f(440,730);
+        glVertex2f(440,680);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(600,680);
+        glVertex2f(600,730);
+        glVertex2f(660,730);
+        glVertex2f(660,680);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(680,680);
+        glVertex2f(680,730);
+        glVertex2f(740,730);
+        glVertex2f(740,680);
+    glEnd();
 }
 
 
@@ -552,6 +705,39 @@ void frontBuilding_3()
         glVertex2f(1430,300);
         glVertex2f(1430,310);
         glVertex2f(1280,310);
+    glEnd();
+
+    // Bigger windows
+    getColor("carWindow");
+    glBegin(GL_QUADS);
+        glVertex2f(1300,850);
+        glVertex2f(1300,900);
+        glVertex2f(1350,900);
+        glVertex2f(1350,850);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1360,850);
+        glVertex2f(1360,900);
+        glVertex2f(1410,900);
+        glVertex2f(1410,850);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1300,700);
+        glVertex2f(1300,750);
+        glVertex2f(1350,750);
+        glVertex2f(1350,700);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1360,700);
+        glVertex2f(1360,750);
+        glVertex2f(1410,750);
+        glVertex2f(1410,700);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex2f(1330,600);
+        glVertex2f(1330,650);
+        glVertex2f(1380,650);
+        glVertex2f(1380,600);
     glEnd();
 }
 
@@ -623,259 +809,6 @@ void frontBuilding_4()
     glEnd();
 }
 
-
-
-
-void rope()
-{
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(719,651);
-        glVertex2f(726,651);
-        glVertex2f(726,643);
-        glVertex2f(719,643);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(726,643);
-        glVertex2f(735,643);
-        glVertex2f(735,636);
-        glVertex2f(726,636);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(735,636);
-        glVertex2f(742,636);
-        glVertex2f(742,628);
-        glVertex2f(735,628);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(742,628);
-        glVertex2f(750,628);
-        glVertex2f(750,620);
-        glVertex2f(742,620);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(750,620);
-        glVertex2f(758,620);
-        glVertex2f(758,613);
-        glVertex2f(750,613);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(758,613);
-        glVertex2f(773,613);
-        glVertex2f(773,605);
-        glVertex2f(758,605);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(773,605);
-        glVertex2f(789,605);
-        glVertex2f(789,598);
-        glVertex2f(773,598);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(789,598);
-        glVertex2f(803,598);
-        glVertex2f(803,590);
-        glVertex2f(789,590);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(803,590);
-        glVertex2f(826,590);
-        glVertex2f(826,582);
-        glVertex2f(803,582);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(826,582);
-        glVertex2f(850,582);
-        glVertex2f(850,574);
-        glVertex2f(826,574);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(850,574);
-        glVertex2f(872,574);
-        glVertex2f(872,567);
-        glVertex2f(850,567);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(988,567);
-        glVertex2f(1018,567);
-        glVertex2f(1018,574);
-        glVertex2f(988,574);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1018,582);
-        glVertex2f(1058,582);
-        glVertex2f(1058,574);
-        glVertex2f(1018,574);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1058,590);
-        glVertex2f(1080,590);
-        glVertex2f(1080,582);
-        glVertex2f(1058,582);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1080,597);
-        glVertex2f(1088,597);
-        glVertex2f(1088,591);
-        glVertex2f(1080,591);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1088,605);
-        glVertex2f(1103,605);
-        glVertex2f(1103,599);
-        glVertex2f(1088,599);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1103,613);
-        glVertex2f(1119,613);
-        glVertex2f(1119,605);
-        glVertex2f(1103,605);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(449,712);
-        glVertex2f(473,712);
-        glVertex2f(473,705);
-        glVertex2f(449,705);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1119,620);
-        glVertex2f(1128,620);
-        glVertex2f(1128,613);
-        glVertex2f(1119,613);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1128,628);
-        glVertex2f(1134,628);
-        glVertex2f(1134,621);
-        glVertex2f(1128,621);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1134,636);
-        glVertex2f(1149,636);
-        glVertex2f(1149,628);
-        glVertex2f(1134,628);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1149,643);
-        glVertex2f(1157,643);
-        glVertex2f(1157,636);
-        glVertex2f(1149,636);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1158,651);
-        glVertex2f(1165,651);
-        glVertex2f(1165,644);
-        glVertex2f(1158,644);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(1150,552);
-        glVertex2f(1165,552);
-        glVertex2f(1165,545);
-        glVertex2f(1150,545);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(988,545);
-        glVertex2f(1150,545);
-        glVertex2f(1150,536);
-        glVertex2f(988,536);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(926,552);
-        glVertex2f(988,552);
-        glVertex2f(988,545);
-        glVertex2f(926,545);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(895,559);
-        glVertex2f(926,559);
-        glVertex2f(926,552);
-        glVertex2f(895,552);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(789,567);
-        glVertex2f(988,567);
-        glVertex2f(988,559);
-        glVertex2f(789,559);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(766,574);
-        glVertex2f(789,574);
-        glVertex2f(789,567);
-        glVertex2f(766,567);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(758,582);
-        glVertex2f(766,582);
-        glVertex2f(766,574);
-        glVertex2f(758,574);
-    glEnd();
-
-    getColor("frontBuilding");
-    glBegin(GL_QUADS);
-        glVertex2f(750,589);
-        glVertex2f(758,589);
-        glVertex2f(758,582);
-        glVertex2f(750,582);
-    glEnd();
-}
 
 //Train Bridge
 void trainBridge()
@@ -4941,139 +4874,207 @@ void sun()
 void boat()
 {
     glPushMatrix();
-    // Lower the boat slightly so it doesn't cover cars
     glTranslatef(-(float)boatPosition, -25.0f, 0.0f);
-    //Hull
+    
+    // Main hull - proper boat shape with curved bow
     getColor("boatHull");
     glBegin(GL_POLYGON);
-        glVertex2f(1180,55);
-        glVertex2f(1890,55);
-        glVertex2f(1925,72);
-        glVertex2f(1945,92);
-        glVertex2f(1915,108);
-        glVertex2f(1320,120);
-        glVertex2f(1235,105);
+        glVertex2f(1200,50);  // Stern bottom
+        glVertex2f(1850,50);  // Mid bottom
+        glVertex2f(1900,58);  // Bow bottom curve
+        glVertex2f(1930,72);  // Bow tip lower
+        glVertex2f(1935,85);  // Bow tip upper
+        glVertex2f(1915,100); // Bow upper curve
+        glVertex2f(1850,110); // Bow deck level
+        glVertex2f(1350,115); // Mid deck level
+        glVertex2f(1230,110); // Stern curve upper
+        glVertex2f(1210,90);  // Stern curve
+        glVertex2f(1205,70);  // Stern lower
     glEnd();
 
-    //Hull shadow line
+    // Hull shadow/shading
     getColor("boatShadow");
     glBegin(GL_QUADS);
-        glVertex2f(1245,68);
-        glVertex2f(1860,68);
-        glVertex2f(1878,80);
-        glVertex2f(1263,80);
+        glVertex2f(1220,58);
+        glVertex2f(1840,58);
+        glVertex2f(1870,70);
+        glVertex2f(1240,70);
     glEnd();
 
-    //Deck top edge (front section)
+    // Lower deck
     getColor("boatDeck");
     glBegin(GL_QUADS);
-        glVertex2f(1320,120);
-        glVertex2f(1450,120);
-        glVertex2f(1450,135);
-        glVertex2f(1320,135);
+        glVertex2f(1230,110);
+        glVertex2f(1850,110);
+        glVertex2f(1850,118);
+        glVertex2f(1230,118);
     glEnd();
 
-    //Deck main middle section
+    // Upper deck sections
     getColor("boatDeck");
     glBegin(GL_QUADS);
-        glVertex2f(1450,120);
-        glVertex2f(1680,120);
-        glVertex2f(1680,135);
-        glVertex2f(1450,135);
+        glVertex2f(1350,115);
+        glVertex2f(1750,115);
+        glVertex2f(1750,125);
+        glVertex2f(1350,125);
     glEnd();
 
-    //Deck extension to bow
+    // Front deck area
     getColor("boatDeck");
     glBegin(GL_QUADS);
-        glVertex2f(1680,120);
-        glVertex2f(1900,120);
-        glVertex2f(1900,135);
-        glVertex2f(1680,135);
+        glVertex2f(1750,115);
+        glVertex2f(1880,115);
+        glVertex2f(1880,125);
+        glVertex2f(1750,125);
     glEnd();
 
-    //Bow tip (triangle)
+    // Bow deck triangle
     getColor("boatDeck");
     glBegin(GL_TRIANGLES);
-        glVertex2f(1900,120);
-        glVertex2f(1945,127);
-        glVertex2f(1900,135);
+        glVertex2f(1880,115);
+        glVertex2f(1915,120);
+        glVertex2f(1880,125);
     glEnd();
 
-    //Cabin body
+    // Main cabin structure
     getColor("boatCabin");
     glBegin(GL_QUADS);
-        glVertex2f(1450,135);
-        glVertex2f(1680,135);
-        glVertex2f(1680,195);
-        glVertex2f(1450,195);
+        glVertex2f(1420,125);
+        glVertex2f(1720,125);
+        glVertex2f(1720,200);
+        glVertex2f(1420,200);
     glEnd();
 
-    //Cabin roof
+    // Cabin side shading
     getColor("boatCabinShade");
     glBegin(GL_QUADS);
-        glVertex2f(1435,195);
-        glVertex2f(1695,195);
-        glVertex2f(1680,210);
-        glVertex2f(1450,210);
+        glVertex2f(1720,125);
+        glVertex2f(1740,125);
+        glVertex2f(1740,200);
+        glVertex2f(1720,200);
     glEnd();
 
-    //Cabin windows
+    // Cabin roof structure
+    getColor("boatCabinShade");
+    glBegin(GL_POLYGON);
+        glVertex2f(1410,200);
+        glVertex2f(1730,200);
+        glVertex2f(1740,205);
+        glVertex2f(1740,218);
+        glVertex2f(1420,218);
+    glEnd();
+
+    // Bridge/Upper cabin
+    getColor("boatCabin");
+    glBegin(GL_QUADS);
+        glVertex2f(1520,218);
+        glVertex2f(1640,218);
+        glVertex2f(1640,260);
+        glVertex2f(1520,260);
+    glEnd();
+
+    // Bridge roof
+    getColor("boatCabinShade");
+    glBegin(GL_QUADS);
+        glVertex2f(1510,260);
+        glVertex2f(1650,260);
+        glVertex2f(1645,272);
+        glVertex2f(1515,272);
+    glEnd();
+
+    // Large front windows on main cabin
     getColor("boatWindow");
     glBegin(GL_QUADS);
-        glVertex2f(1470,152);
-        glVertex2f(1555,152);
-        glVertex2f(1555,182);
-        glVertex2f(1470,182);
+        glVertex2f(1440,145);
+        glVertex2f(1550,145);
+        glVertex2f(1550,185);
+        glVertex2f(1440,185);
     glEnd();
 
     getColor("boatWindow");
     glBegin(GL_QUADS);
-        glVertex2f(1570,152);
-        glVertex2f(1655,152);
-        glVertex2f(1655,182);
-        glVertex2f(1570,182);
+        glVertex2f(1570,145);
+        glVertex2f(1680,145);
+        glVertex2f(1680,185);
+        glVertex2f(1570,185);
     glEnd();
 
-    //Portholes on hull
-    getColor("boatPorthole");
+    // Bridge windows
+    getColor("boatWindow");
     glBegin(GL_QUADS);
-        glVertex2f(1340,78);
-        glVertex2f(1368,78);
-        glVertex2f(1368,100);
-        glVertex2f(1340,100);
+        glVertex2f(1535,230);
+        glVertex2f(1600,230);
+        glVertex2f(1600,250);
+        glVertex2f(1535,250);
     glEnd();
 
-    getColor("boatPorthole");
+    // Window dividers for realism
+    getColor("boatCabin");
     glBegin(GL_QUADS);
-        glVertex2f(1410,78);
-        glVertex2f(1438,78);
-        glVertex2f(1438,100);
-        glVertex2f(1410,100);
+        glVertex2f(1493,145);
+        glVertex2f(1497,145);
+        glVertex2f(1497,185);
+        glVertex2f(1493,185);
     glEnd();
 
-    getColor("boatPorthole");
+    getColor("boatCabin");
     glBegin(GL_QUADS);
-        glVertex2f(1480,78);
-        glVertex2f(1508,78);
-        glVertex2f(1508,100);
-        glVertex2f(1480,100);
+        glVertex2f(1623,145);
+        glVertex2f(1627,145);
+        glVertex2f(1627,185);
+        glVertex2f(1623,185);
     glEnd();
 
+    // Portholes on hull - circular look
     getColor("boatPorthole");
-    glBegin(GL_QUADS);
-        glVertex2f(1550,78);
-        glVertex2f(1578,78);
-        glVertex2f(1578,100);
-        glVertex2f(1550,100);
-    glEnd();
+    for(int i = 0; i < 5; i++) {
+        glBegin(GL_POLYGON);
+            float cx = 1280 + i*100;
+            float cy = 85;
+            float radius = 12;
+            for(int j = 0; j < 20; j++) {
+                float angle = 2.0f * 3.14159f * j / 20;
+                glVertex2f(cx + radius * cos(angle), cy + radius * sin(angle));
+            }
+        glEnd();
+    }
 
-    //A small mast-like accent
+    // Railing on front deck
     getColor("boatShadow");
     glBegin(GL_QUADS);
-        glVertex2f(1600,210);
-        glVertex2f(1612,210);
-        glVertex2f(1612,240);
-        glVertex2f(1600,240);
+        glVertex2f(1750,125);
+        glVertex2f(1880,125);
+        glVertex2f(1880,127);
+        glVertex2f(1750,127);
+    glEnd();
+
+    // Small railings posts
+    for(int i = 0; i < 6; i++) {
+        getColor("boatShadow");
+        glBegin(GL_QUADS);
+            glVertex2f(1760 + i*20, 115);
+            glVertex2f(1763 + i*20, 115);
+            glVertex2f(1763 + i*20, 125);
+            glVertex2f(1760 + i*20, 125);
+        glEnd();
+    }
+
+    // Smokestack/funnel
+    getColor("boatCabinShade");
+    glBegin(GL_QUADS);
+        glVertex2f(1450,200);
+        glVertex2f(1480,200);
+        glVertex2f(1480,250);
+        glVertex2f(1450,250);
+    glEnd();
+
+    // Funnel top
+    getColor("boatShadow");
+    glBegin(GL_QUADS);
+        glVertex2f(1445,250);
+        glVertex2f(1485,250);
+        glVertex2f(1485,258);
+        glVertex2f(1445,258);
     glEnd();
 
     glPopMatrix();
