@@ -3119,6 +3119,24 @@ void car_1()
         glVertex2f(1318,185);
         glVertex2f(1318,177);
     glEnd();
+
+    // Headlight beam (night only) - pointing left
+    if (!isDay) {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glColor4ub(255, 255, 200, 60);
+        glBegin(GL_TRIANGLES);
+            glVertex2f(1180, 145);
+            glVertex2f(1040, 125);
+            glVertex2f(1040, 165);
+        glEnd();
+        glBegin(GL_TRIANGLES);
+            glVertex2f(1196, 169);
+            glVertex2f(1020, 150);
+            glVertex2f(1020, 188);
+        glEnd();
+        glDisable(GL_BLEND);
+    }
     glPopMatrix();
 }
 
@@ -3212,6 +3230,24 @@ void car_2()
         glVertex2f(1648,151);
         glVertex2f(1648,147);
     glEnd();
+
+    // Headlight beam (night only) - pointing right
+    if (!isDay) {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glColor4ub(255, 255, 200, 60);
+        glBegin(GL_TRIANGLES);
+            glVertex2f(1695, 139);
+            glVertex2f(1835, 125);
+            glVertex2f(1835, 153);
+        glEnd();
+        glBegin(GL_TRIANGLES);
+            glVertex2f(1634, 153);
+            glVertex2f(1774, 139);
+            glVertex2f(1774, 167);
+        glEnd();
+        glDisable(GL_BLEND);
+    }
     glPopMatrix();
 }
 
@@ -3300,6 +3336,19 @@ void car_3()
         glVertex2f(465,152);
         glVertex2f(465,148);
     glEnd();
+
+    // Headlight beam (night only) - pointing left
+    if (!isDay) {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glColor4ub(255, 255, 200, 60);
+        glBegin(GL_TRIANGLES);
+            glVertex2f(400, 145);
+            glVertex2f(260, 130);
+            glVertex2f(260, 160);
+        glEnd();
+        glDisable(GL_BLEND);
+    }
     glPopMatrix();
 }
 
@@ -3389,8 +3438,59 @@ void car_4()
         glVertex2f(120,152);
         glVertex2f(120,148);
     glEnd();
+
+    // Headlight beam (night only) - pointing right
+    if (!isDay) {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glColor4ub(255, 255, 200, 60);
+        glBegin(GL_TRIANGLES);
+            glVertex2f(170, 145);
+            glVertex2f(310, 130);
+            glVertex2f(310, 160);
+        glEnd();
+        glDisable(GL_BLEND);
+    }
     glPopMatrix();
 }
+
+// DDA Line Drawing Algorithm
+void drawDDALine(int x0, int y0, int x1, int y1, GLubyte r, GLubyte g, GLubyte b, GLubyte a)
+{
+    int dx = x1 - x0;
+    int dy = y1 - y0;
+
+    // Case handling like the taught process
+    int steps;
+    float xIncrement, yIncrement;
+    if (abs(dx) > abs(dy)) {
+        steps = abs(dx);
+        xIncrement = (float) (dx > 0 ? 1 : -1);
+        yIncrement = (float)dy / (float)steps;
+    } else {
+        steps = abs(dy);
+        xIncrement = (float)dx / (float)steps;
+        yIncrement = (float) (dy > 0 ? 1 : -1);
+    }
+
+    // Start from initial point
+    float x = (float)x0;
+    float y = (float)y0;
+    
+    glPointSize(2.0);
+    glBegin(GL_POINTS);
+    glColor4ub(r, g, b, a);
+    
+    for(int i = 0; i <= steps; i++) {
+        glVertex2i((int)(x + 0.5), (int)(y + 0.5));  // Round to nearest integer
+        x += xIncrement;
+        y += yIncrement;
+    }
+    
+    glEnd();
+    glPointSize(1.0);
+}
+
 //Train
 void train()
 {
@@ -4678,6 +4778,34 @@ void train()
         glVertex2f(1618,490);
         glVertex2f(1610,490);
     glEnd();
+
+    // Train headlight beams using DDA algorithm (night only)
+    if (!isDay) {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+        // Draw headlight beam using DDA line algorithm
+        // Upper beam line
+        int x0 = 1679, y0 = 505;
+        int x1 = 1850, y1 = 530;
+        drawDDALine(x0, y0, x1, y1, 255, 255, 200, 80);
+        
+        // Lower beam line
+        x0 = 1679; y0 = 460;
+        x1 = 1850; y1 = 435;
+        drawDDALine(x0, y0, x1, y1, 255, 255, 200, 80);
+        
+        // Fill the beam area with semi-transparent light
+        glColor4ub(255, 255, 200, 50);
+        glBegin(GL_QUADS);
+            glVertex2f(1679, 505);
+            glVertex2f(1850, 530);
+            glVertex2f(1850, 435);
+            glVertex2f(1679, 460);
+        glEnd();
+        
+        glDisable(GL_BLEND);
+    }
 
     glPopMatrix();
 }
