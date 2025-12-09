@@ -6,7 +6,6 @@
 #include <OpenGL/gl.h>
 #include <GLUT/glut.h>
 #include <cstdlib>
-
 using namespace std;
 
 //Color palette
@@ -72,7 +71,7 @@ const float boatSpeed = 2.0f;
 int boatAnimState = 0;
 
 // Global variables for animation
-float trainPosition = -600.0f;
+float trainPosition = -1600.0f;
 // Car 1 headlights face left, so move it left-to-right accordingly
 float carPosition_1 = 1200.0f; // start off-screen right, move left - truck
 float carPosition_2 = 300.0f;
@@ -5227,29 +5226,29 @@ void backGround()
 //Timer callback for animation
 void update(int value)
 {
-    trainPosition += 5.0f;
-    if (trainPosition > 1920) trainPosition = -400;
+    trainPosition += 13.0f;
+    if (trainPosition > 1820) trainPosition = -1600;
     
     // Car 1 moves left (headlights on the left side)
-    carPosition_1 -= 4.0f;
-    if (carPosition_1 < -500) carPosition_1 = 2200.0f;
+    carPosition_1 -= 8.0f;
+    if (carPosition_1 < -1600) carPosition_1 = 1800.0f;
     
-    carPosition_2 += 3.4f;
-    if (carPosition_2 > 1920) carPosition_2 = -350;
+    carPosition_2 += 7.4f;
+    if (carPosition_2 > 2100) carPosition_2 = -350;
 
-    carPosition_3 -= 4.2f; // left-moving
-    if (carPosition_3 < -500) carPosition_3 = 2200;
+    carPosition_3 -= 8.2f; // left-moving
+    if (carPosition_3 < -1600) carPosition_3 = 1800;
 
-    carPosition_4 += 4.0f; // right-moving
-    if (carPosition_4 > 2200) carPosition_4 = -700;
+    carPosition_4 += 6.0f; // right-moving
+    if (carPosition_4 > 2100) carPosition_4 = -700;
     
     boatPosition += boatSpeed;
     if (boatPosition > 1920) boatPosition = -950.0f;
     
-    cloudPosition_1 += 0.5f;
+    cloudPosition_1 += 1.5f;
     if (cloudPosition_1 > 1920) cloudPosition_1 = -200;
     
-    cloudPosition_2 += 0.4f;
+    cloudPosition_2 += 1.4f;
     if (cloudPosition_2 > 1920) cloudPosition_2 = -200;
     
     glutPostRedisplay();
