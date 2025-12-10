@@ -83,6 +83,7 @@ float evenReflectionPosition = 0.0f;
 float oddReflectionPosition = 0.0f;
 float cloudPosition = 0.0f;
 bool dayNight = true;
+float clockTime = 0.0f;  // Simulated time for clock (0-12 hours)
 
 // Function to set color from palette
 void getColor(const string& colorName) {
@@ -172,6 +173,171 @@ void renderTextBigger(float x, float y, const string& text) {
         glRasterPos2f(charX + 1, y - 1);
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i]);
     }
+}
+
+// Function to draw an ornamental watch tower clock
+void drawClock(float x, float y, float time) {
+    // Outer decorative ring (gold-like)
+    glColor3ub(218, 165, 32);
+    glBegin(GL_POLYGON);
+        for(int i = 0; i < 32; i++) {
+            float rad = i * 11.25f * 3.14159f / 180.0f;
+            glVertex2f(x + 58.0f * cos(rad), y + 58.0f * sin(rad));
+        }
+    glEnd();
+    
+    // Outer frame border (dark metal)
+    glColor3ub(40, 40, 40);
+    glBegin(GL_LINE_LOOP);
+        for(int i = 0; i < 32; i++) {
+            float rad = i * 11.25f * 3.14159f / 180.0f;
+            glVertex2f(x + 58.0f * cos(rad), y + 58.0f * sin(rad));
+        }
+    glEnd();
+    
+    // Inner silver ring
+    glColor3ub(200, 200, 200);
+    glBegin(GL_POLYGON);
+        for(int i = 0; i < 32; i++) {
+            float rad = i * 11.25f * 3.14159f / 180.0f;
+            glVertex2f(x + 54.0f * cos(rad), y + 54.0f * sin(rad));
+        }
+    glEnd();
+    
+    // Clock face background - white (main dial)
+    glColor3ub(255, 255, 255);
+    glBegin(GL_POLYGON);
+        for(int i = 0; i < 32; i++) {
+            float rad = i * 11.25f * 3.14159f / 180.0f;
+            glVertex2f(x + 50.0f * cos(rad), y + 50.0f * sin(rad));
+        }
+    glEnd();
+    
+    // Clock face border - dark circle
+    glColor3ub(50, 50, 50);
+    glBegin(GL_LINE_LOOP);
+        for(int i = 0; i < 32; i++) {
+            float rad = i * 11.25f * 3.14159f / 180.0f;
+            glVertex2f(x + 50.0f * cos(rad), y + 50.0f * sin(rad));
+        }
+    glEnd();
+    
+    // Hour markers - Roman numeral style thick lines
+    glColor3ub(30, 30, 30);
+    for(int h = 0; h < 12; h++) {
+        float angle = (h * 30.0f - 90.0f) * 3.14159f / 180.0f;
+        float markerX1 = x + 45.0f * cos(angle);
+        float markerY1 = y + 45.0f * sin(angle);
+        float markerX2 = x + 40.0f * cos(angle);
+        float markerY2 = y + 40.0f * sin(angle);
+        
+        glBegin(GL_QUADS);
+            glVertex2f(markerX1 - 1.5f, markerY1 - 1.5f);
+            glVertex2f(markerX1 + 1.5f, markerY1 + 1.5f);
+            glVertex2f(markerX2 + 1.5f, markerY2 + 1.5f);
+            glVertex2f(markerX2 - 1.5f, markerY2 - 1.5f);
+        glEnd();
+    }
+    
+    // Decorative minute markers
+    glColor3ub(150, 150, 150);
+    for(int m = 0; m < 60; m++) {
+        if(m % 5 != 0) {  // Skip hour positions
+            float angle = (m * 6.0f - 90.0f) * 3.14159f / 180.0f;
+            float markerX = x + 48.0f * cos(angle);
+            float markerY = y + 48.0f * sin(angle);
+            
+            glBegin(GL_POLYGON);
+                for(int i = 0; i < 6; i++) {
+                    float rad = i * 60.0f * 3.14159f / 180.0f;
+                    glVertex2f(markerX + 0.8f * cos(rad), markerY + 0.8f * sin(rad));
+                }
+            glEnd();
+        }
+    }
+    
+    // Heavy duty metallic hub - large and solid
+    glColor3ub(120, 120, 120);
+    glBegin(GL_POLYGON);
+        for(int i = 0; i < 16; i++) {
+            float rad = i * 22.5f * 3.14159f / 180.0f;
+            glVertex2f(x + 8.0f * cos(rad), y + 8.0f * sin(rad));
+        }
+    glEnd();
+    
+    // Hub center reinforcement
+    glColor3ub(50, 50, 50);
+    glBegin(GL_POLYGON);
+        for(int i = 0; i < 8; i++) {
+            float rad = i * 45.0f * 3.14159f / 180.0f;
+            glVertex2f(x + 4.0f * cos(rad), y + 4.0f * sin(rad));
+        }
+    glEnd();
+    
+    // Hour hand (shorter, thick, ornate)
+    float hourAngle = (fmod(-time * 2.0f, 12.0f) / 12.0f * 360.0f - 90.0f) * 3.14159f / 180.0f;
+    glColor3ub(20, 20, 20);
+    glBegin(GL_QUADS);
+        float hx1 = x + 20.0f * cos(hourAngle);
+        float hy1 = y + 20.0f * sin(hourAngle);
+        float hx2 = x + 6.0f * cos(hourAngle + 1.5708f);
+        float hy2 = y + 6.0f * sin(hourAngle + 1.5708f);
+        float hx3 = x + 6.0f * cos(hourAngle - 1.5708f);
+        float hy3 = y + 6.0f * sin(hourAngle - 1.5708f);
+        
+        glVertex2f(x, y);
+        glVertex2f(hx2, hy2);
+        glVertex2f(hx1, hy1);
+        glVertex2f(hx3, hy3);
+    glEnd();
+    
+    // Hour hand decorative tip
+    glColor3ub(200, 160, 0);  // Gold tip
+    glBegin(GL_POLYGON);
+        float hx = x + 20.0f * cos(hourAngle);
+        float hy = y + 20.0f * sin(hourAngle);
+        for(int i = 0; i < 6; i++) {
+            float rad = i * 60.0f * 3.14159f / 180.0f;
+            glVertex2f(hx + 1.5f * cos(rad), hy + 1.5f * sin(rad));
+        }
+    glEnd();
+    
+    // Minute hand (longer, elegant)
+    float minuteAngle = (fmod(-time * 2.0f * 12.0f, 60.0f) / 60.0f * 360.0f - 90.0f) * 3.14159f / 180.0f;
+    glColor3ub(100, 100, 100);
+    glBegin(GL_QUADS);
+        float mx1 = x + 33.0f * cos(minuteAngle);
+        float my1 = y + 33.0f * sin(minuteAngle);
+        float mx2 = x + 4.5f * cos(minuteAngle + 1.5708f);
+        float my2 = y + 4.5f * sin(minuteAngle + 1.5708f);
+        float mx3 = x + 4.5f * cos(minuteAngle - 1.5708f);
+        float my3 = y + 4.5f * sin(minuteAngle - 1.5708f);
+        
+        glVertex2f(x, y);
+        glVertex2f(mx2, my2);
+        glVertex2f(mx1, my1);
+        glVertex2f(mx3, my3);
+    glEnd();
+    
+    // Minute hand decorative tip
+    glColor3ub(180, 180, 180);
+    glBegin(GL_POLYGON);
+        float mx = x + 33.0f * cos(minuteAngle);
+        float my = y + 33.0f * sin(minuteAngle);
+        for(int i = 0; i < 6; i++) {
+            float rad = i * 60.0f * 3.14159f / 180.0f;
+            glVertex2f(mx + 1.2f * cos(rad), my + 1.2f * sin(rad));
+        }
+    glEnd();
+    
+    // Center ornamental jewel
+    glColor3ub(255, 215, 0);  // Gold
+    glBegin(GL_POLYGON);
+        for(int i = 0; i < 8; i++) {
+            float rad = i * 45.0f * 3.14159f / 180.0f;
+            glVertex2f(x + 2.5f * cos(rad), y + 2.5f * sin(rad));
+        }
+    glEnd();
 }
 
 //Back Back Building 1
@@ -849,6 +1015,9 @@ void frontBuilding_3()
         glColor3ub(255, 255, 0);
     }
     renderTextLarge(1032, 810, "SCHOOL");
+    
+    // Clock on school building
+    drawClock(1355, 875, clockTime);
 }
 
 //Front Building 4
@@ -3384,6 +3553,73 @@ void boat()
         glVertex2f(1623,185);
     glEnd();
 
+    // White reflected bars on left window
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1455,165);
+        glVertex2f(1462,165);
+        glVertex2f(1462,157);
+        glVertex2f(1455,157);
+    glEnd();
+
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1462,172);
+        glVertex2f(1470,172);
+        glVertex2f(1470,165);
+        glVertex2f(1462,165);
+    glEnd();
+
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1470,179);
+        glVertex2f(1478,179);
+        glVertex2f(1478,172);
+        glVertex2f(1470,172);
+    glEnd();
+
+    // White reflected bars on right window
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1585,165);
+        glVertex2f(1592,165);
+        glVertex2f(1592,157);
+        glVertex2f(1585,157);
+    glEnd();
+
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1592,172);
+        glVertex2f(1600,172);
+        glVertex2f(1600,165);
+        glVertex2f(1592,165);
+    glEnd();
+
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1600,179);
+        glVertex2f(1608,179);
+        glVertex2f(1608,172);
+        glVertex2f(1600,172);
+    glEnd();
+
+    // White reflected bars on bridge window
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1550,240);
+        glVertex2f(1556,240);
+        glVertex2f(1556,234);
+        glVertex2f(1550,234);
+    glEnd();
+
+    glColor3ub(230, 240, 255);
+    glBegin(GL_QUADS);
+        glVertex2f(1556,245);
+        glVertex2f(1562,245);
+        glVertex2f(1562,240);
+        glVertex2f(1556,240);
+    glEnd();
+
     // Portholes on hull - circular look
     getColor("boatPorthole");
     for(int i = 0; i < 5; i++) {
@@ -3655,6 +3891,9 @@ void update(int value)
     
     cloudPosition_2 += 1.4f;
     if (cloudPosition_2 > 1920) cloudPosition_2 = -200;
+    
+    clockTime += 0.01f;  // Faster clock advancement
+    if (clockTime >= 12.0f) clockTime = 0.0f;  // Reset at 12 hours
     
     glutPostRedisplay();
     glutTimerFunc(50, update, 0);
