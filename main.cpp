@@ -94,6 +94,86 @@ void getColor(const string& colorName) {
     }
 }
 
+// Function to render text on buildings
+void renderText(float x, float y, const string& text) {
+    glRasterPos2f(x, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+}
+
+// Function to render larger bold text - thick and bold
+void renderTextLarge(float x, float y, const string& text) {
+    glRasterPos2f(x, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    // Draw text multiple times for thickness effect
+    glRasterPos2f(x + 1, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x + 2, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+}
+
+// Function to render 2x bigger bold text
+void renderTextExtraLarge(float x, float y, const string& text) {
+    glRasterPos2f(x, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x + 1, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x + 2, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x + 3, y);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x, y - 1);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x + 1, y - 1);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x + 2, y - 1);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+    glRasterPos2f(x + 3, y - 1);
+    for (const char& c : text) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    }
+}
+
+// Function to render 2x bigger text without bold
+void renderTextBigger(float x, float y, const string& text) {
+    float spacing = 22.0f; // Gap between characters
+    for (size_t i = 0; i < text.length(); i++) {
+        float charX = x + (i * spacing);
+        // Move M character 8 pixels left
+        if (i == 0) charX -= 8.0f;
+        
+        glRasterPos2f(charX, y);
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i]);
+        glRasterPos2f(charX + 1, y);
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i]);
+        glRasterPos2f(charX, y - 1);
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i]);
+        glRasterPos2f(charX + 1, y - 1);
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i]);
+    }
+}
+
 //Back Back Building 1
 void backBackBuilding_1()
 {
@@ -661,6 +741,21 @@ void frontBuilding_2()
         glVertex2f(740,730);
         glVertex2f(740,680);
     glEnd();
+    
+    // Hospital name - centered on top with black background
+    glColor3ub(0, 0, 0);
+    glBegin(GL_QUADS);
+        glVertex2f(390, 765);
+        glVertex2f(590, 765);
+        glVertex2f(590, 830);
+        glVertex2f(390, 830);
+    glEnd();
+    if (isDay) {
+        glColor3ub(255, 255, 255);
+    } else {
+        glColor3ub(255, 255, 0);
+    }
+    renderTextLarge(420, 795, "HOSPITAL");
 }
 
 
@@ -739,6 +834,21 @@ void frontBuilding_3()
         glVertex2f(1380,650);
         glVertex2f(1380,600);
     glEnd();
+    
+    // School name - centered on top with black background
+    glColor3ub(0, 0, 0);
+    glBegin(GL_QUADS);
+        glVertex2f(1000, 780);
+        glVertex2f(1175, 780);
+        glVertex2f(1175, 845);
+        glVertex2f(1000, 845);
+    glEnd();
+    if (isDay) {
+        glColor3ub(255, 255, 255);
+    } else {
+        glColor3ub(255, 255, 0);
+    }
+    renderTextLarge(1032, 810, "SCHOOL");
 }
 
 //Front Building 4
@@ -807,6 +917,22 @@ void frontBuilding_4()
         glVertex2f(1850,265);
         glVertex2f(1580,265);
     glEnd();
+    
+    // Mall name - centered on top with black background
+    glColor3ub(0, 0, 0);
+    glBegin(GL_QUADS);
+        glVertex2f(1630, 900);
+        glVertex2f(1750, 900);
+        glVertex2f(1750, 965);
+        glVertex2f(1630, 965);
+    glEnd();
+    
+    if (isDay) {
+        glColor3ub(255, 255, 255);
+    } else {
+        glColor3ub(255, 255, 0);
+    }
+    renderTextBigger(1657, 930, "MALL");
 }
 
 
