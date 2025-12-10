@@ -29,6 +29,12 @@ g++ main.cpp -o program -lGL -lGLU -lglut
 ./program
 ```
 
+**Windows (MinGW):**
+```bash
+g++ main.cpp -o program -lopengl32 -lglu32 -lglut32
+program.exe
+```
+
 ## Controls
 
 | Key | Action |
