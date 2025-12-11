@@ -77,11 +77,12 @@ float carPosition_1 = 1200.0f; // start off-screen right, move left - truck
 float carPosition_2 = 300.0f;
 float carPosition_3 = 1400.0f; // moves left
 float carPosition_4 = -500.0f; // moves right
-float cloudPosition_1 = 0.0f;
-float cloudPosition_2 = 600.0f;
 float evenReflectionPosition = 0.0f;
 float oddReflectionPosition = 0.0f;
 float cloudPosition = 0.0f;
+float cloudPosition2 = 400.0f;
+float cloudPosition3 = 800.0f;
+float cloudPosition4 = 1200.0f;
 bool dayNight = true;
 float clockTime = 0.0f;  // Simulated time for clock (0-12 hours)
 
@@ -3725,66 +3726,228 @@ void cloudMove()
     glTranslatef(cloudPosition,0, 0);
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1107,1034);
-        glVertex2f(1107,1039);
-        glVertex2f(1265,1039);
-        glVertex2f(1265,1034);
+        glVertex2f(1107,950);
+        glVertex2f(1107,955);
+        glVertex2f(1265,955);
+        glVertex2f(1265,950);
     glEnd();
 
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1120,1029);
-        glVertex2f(1120,1034);
-        glVertex2f(1188,1034);
-        glVertex2f(1188,1029);
+        glVertex2f(1120,945);
+        glVertex2f(1120,950);
+        glVertex2f(1188,950);
+        glVertex2f(1188,945);
     glEnd();
 
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1205,1029);
-        glVertex2f(1205,1034);
-        glVertex2f(1281,1034);
-        glVertex2f(1281,1029);
+        glVertex2f(1205,945);
+        glVertex2f(1205,950);
+        glVertex2f(1281,950);
+        glVertex2f(1281,945);
     glEnd();
 
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1164,1039);
-        glVertex2f(1164,1044);
-        glVertex2f(1216,1044);
-        glVertex2f(1216,1039);
+        glVertex2f(1164,955);
+        glVertex2f(1164,960);
+        glVertex2f(1216,960);
+        glVertex2f(1216,955);
     glEnd();
 
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1168,1044);
-        glVertex2f(1168,1048);
-        glVertex2f(1212,1048);
-        glVertex2f(1212,1044);
+        glVertex2f(1168,960);
+        glVertex2f(1168,964);
+        glVertex2f(1212,964);
+        glVertex2f(1212,960);
     glEnd();
 
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1188,1048);
-        glVertex2f(1188,1053);
-        glVertex2f(1200,1053);
-        glVertex2f(1200,1048);
+        glVertex2f(1188,964);
+        glVertex2f(1188,969);
+        glVertex2f(1200,969);
+        glVertex2f(1200,964);
     glEnd();
 
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1232,1024);
-        glVertex2f(1232,1029);
-        glVertex2f(1241,1029);
-        glVertex2f(1241,1024);
+        glVertex2f(1232,940);
+        glVertex2f(1232,945);
+        glVertex2f(1241,945);
+        glVertex2f(1241,940);
     glEnd();
 
     getColor("cloud");
     glBegin(GL_QUADS);
-        glVertex2f(1253,1024);
-        glVertex2f(1253,1029);
-        glVertex2f(1273,1029);
-        glVertex2f(1273,1024);
+        glVertex2f(1253,940);
+        glVertex2f(1253,945);
+        glVertex2f(1273,945);
+        glVertex2f(1273,940);
+    glEnd();
+    glPopMatrix();
+}
+
+void cloudMove2()
+{
+    glPushMatrix();
+    glTranslatef(cloudPosition2,0, 0);
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(200,1005);
+        glVertex2f(200,1010);
+        glVertex2f(340,1010);
+        glVertex2f(340,1005);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(210,1000);
+        glVertex2f(210,1005);
+        glVertex2f(270,1005);
+        glVertex2f(270,1000);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(285,1000);
+        glVertex2f(285,1005);
+        glVertex2f(350,1005);
+        glVertex2f(350,1000);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(240,1010);
+        glVertex2f(240,1015);
+        glVertex2f(285,1015);
+        glVertex2f(285,1010);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(245,1015);
+        glVertex2f(245,1019);
+        glVertex2f(280,1019);
+        glVertex2f(280,1015);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(260,1019);
+        glVertex2f(260,1023);
+        glVertex2f(270,1023);
+        glVertex2f(270,1019);
+    glEnd();
+    glPopMatrix();
+}
+
+void cloudMove3()
+{
+    glPushMatrix();
+    glTranslatef(cloudPosition3,0, 0);
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(500,975);
+        glVertex2f(500,980);
+        glVertex2f(620,980);
+        glVertex2f(620,975);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(515,970);
+        glVertex2f(515,975);
+        glVertex2f(565,975);
+        glVertex2f(565,970);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(580,970);
+        glVertex2f(580,975);
+        glVertex2f(630,975);
+        glVertex2f(630,970);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(545,980);
+        glVertex2f(545,985);
+        glVertex2f(585,985);
+        glVertex2f(585,980);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(550,985);
+        glVertex2f(550,989);
+        glVertex2f(580,989);
+        glVertex2f(580,985);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(560,989);
+        glVertex2f(560,993);
+        glVertex2f(570,993);
+        glVertex2f(570,989);
+    glEnd();
+    glPopMatrix();
+}
+
+void cloudMove4()
+{
+    glPushMatrix();
+    glTranslatef(cloudPosition4,0, 0);
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(300,960);
+        glVertex2f(300,965);
+        glVertex2f(430,965);
+        glVertex2f(430,960);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(315,955);
+        glVertex2f(315,960);
+        glVertex2f(370,960);
+        glVertex2f(370,955);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(385,955);
+        glVertex2f(385,960);
+        glVertex2f(440,960);
+        glVertex2f(440,955);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(345,965);
+        glVertex2f(345,970);
+        glVertex2f(390,970);
+        glVertex2f(390,965);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(350,970);
+        glVertex2f(350,974);
+        glVertex2f(385,974);
+        glVertex2f(385,970);
+    glEnd();
+
+    getColor("cloud");
+    glBegin(GL_QUADS);
+        glVertex2f(360,974);
+        glVertex2f(360,978);
+        glVertex2f(375,978);
+        glVertex2f(375,974);
     glEnd();
     glPopMatrix();
 }
@@ -3886,11 +4049,17 @@ void update(int value)
     boatPosition += boatSpeed;
     if (boatPosition > 1920) boatPosition = -950.0f;
     
-    cloudPosition_1 += 1.5f;
-    if (cloudPosition_1 > 1920) cloudPosition_1 = -200;
+    cloudPosition += 5.5f;
+    if (cloudPosition > 1920) cloudPosition = -350;
     
-    cloudPosition_2 += 1.4f;
-    if (cloudPosition_2 > 1920) cloudPosition_2 = -200;
+    cloudPosition2 += 4.2f;
+    if (cloudPosition2 > 1920) cloudPosition2 = -450;
+    
+    cloudPosition3 += 3.8f;
+    if (cloudPosition3 > 1920) cloudPosition3 = -550;
+    
+    cloudPosition4 += 6.1f;
+    if (cloudPosition4 > 1920) cloudPosition4 = -250;
     
     clockTime += 0.01f;  // Faster clock advancement
     if (clockTime >= 12.0f) clockTime = 0.0f;  // Reset at 12 hours
@@ -3917,6 +4086,9 @@ void myDisplay(void)
     stars();
     //Cloud Move
     cloudMove();
+    cloudMove2();
+    cloudMove3();
+    cloudMove4();
     //Back Back Building
     backBackBuilding_1();
     backBackBuilding_2();
@@ -3954,8 +4126,6 @@ void myDisplay(void)
     boat();
     //Sun
     sun();
-    //Cloud
-    cloud();
 
     glutSwapBuffers();
 }
